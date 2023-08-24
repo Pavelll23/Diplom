@@ -19,3 +19,7 @@ services:
       - POSTGRES_USER=qwerty
       - POSTGRES_PASSWORD=ytrewq
 
+  nodejs:
+    build: ./gate-simulator
+    ports:
+      - '9999:9999'
