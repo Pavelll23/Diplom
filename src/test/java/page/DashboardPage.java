@@ -21,9 +21,9 @@ public class DashboardPage {
         return new PaymentPage();
     }
 
-    public PaymentPage openCreditPage() {
+    public PaymentPageForCredit openCreditPage() {
         creditButton.click();
-        return new PaymentPage();
+        return new PaymentPageForCredit();
     }
 }
 
