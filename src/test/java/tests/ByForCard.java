@@ -1,28 +1,39 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import data.DataHelper;
 import data.SqlHelper;
+import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import page.DashboardPage;
 import page.PaymentPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class ByForCard {
+
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
     @BeforeEach
     public void setUp() {
         String url = System.getProperty("sut.url");
         open(url);
-
     }
 
     @AfterEach
     public void deleteDB() {
         SqlHelper.deleteDataBase();
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
     }
 
     @Test

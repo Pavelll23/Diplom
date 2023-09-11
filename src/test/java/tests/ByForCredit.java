@@ -7,7 +7,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page.DashboardPage;
-import page.PaymentPage;
 import page.PaymentPageForCredit;
 
 import static com.codeborne.selenide.Selenide.open;
