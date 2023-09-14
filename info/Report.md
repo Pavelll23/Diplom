@@ -15,7 +15,7 @@
 - Успешные сценарии составили 58.82%
 ![Monosnap Allure Report - Google Chrome 2023-09-13  png1](https://github.com/Pavelll23/Diplom/assets/116386264/2ee599be-0594-40c2-853a-257ff88e4ce8)
 - Не успешные сценарии составили 41.18%
-![](C:/Users/Павел/Downloads/Monosnap Allure Report - Google Chrome 2023-09-13 .png2.png)
+![Monosnap Allure Report - Google Chrome 2023-09-13  png2](https://github.com/Pavelll23/Diplom/assets/116386264/5918153d-fb57-4a20-a6c3-9364eafd5dc0)
 
 ### Общие рекомендации
 1. Для упрощения поиска нужных нам селекторов добавить data test-id для элементов страниц.
