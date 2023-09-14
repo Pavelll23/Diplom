@@ -13,7 +13,7 @@
 
 ### Процент успешных и не успешных тест-кейсов
 - Успешные сценарии составили 58.82%
-![](C:/Users/Павел/Downloads/Monosnap Allure Report - Google Chrome 2023-09-13 .png1.png)
+![Monosnap Allure Report - Google Chrome 2023-09-13  png1](https://github.com/Pavelll23/Diplom/assets/116386264/2ee599be-0594-40c2-853a-257ff88e4ce8)
 - Не успешные сценарии составили 41.18%
 ![](C:/Users/Павел/Downloads/Monosnap Allure Report - Google Chrome 2023-09-13 .png2.png)
 
