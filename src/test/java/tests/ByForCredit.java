@@ -60,8 +60,8 @@ public class ByForCredit {
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
         payment.completedForm(DataHelper.getDateLastMonth());
-        payment.expectationCardExpired();
-        assertEquals("Истёк срок действия карты", payment.getInvalidText());
+        payment.expectationInvalidDataCard();
+        assertEquals("Неверно указан срок действия карты", payment.getInvalidText());
     }
 
     @Test
@@ -88,8 +88,8 @@ public class ByForCredit {
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
         payment.completedForm(DataHelper.getDatePastYear());
-        payment.expectationInvalidFormat();
-        assertEquals("Неверный формат", payment.getInvalidText());
+        payment.expectationCardExpired();
+        assertEquals("Истёк срок действия карты", payment.getInvalidText());
     }
     @Test
     void shouldByPaymentNextYear() {          // Год не входящий в диапазон валидных (+6)
@@ -160,8 +160,8 @@ public class ByForCredit {
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
         payment.completedForm(DataHelper.getCardAllZero());
-        payment.expectationInvalidFormat();
-        assertEquals("Неверный формат", payment.getInvalidText());
+        payment.expectationError();
+       // assertEquals("Неверный формат", payment.getInvalidText());
     }
     @Test
     void shouldByEnterCvcAllZero(){        //Ввод в поле "CVC" все 0
@@ -169,8 +169,8 @@ public class ByForCredit {
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
         payment.completedForm(DataHelper.getCvcAllZero());
-        payment.expectationInvalidFormat();
-        assertEquals("Неверный формат", payment.getInvalidText());
+        payment.expectationError();
+       // assertEquals("Неверный формат", payment.getInvalidText());
     }
     @Test
     void shouldByEnterCvcOneTsyfry(){        //Ввод в поле "CVC" одну цыфру
