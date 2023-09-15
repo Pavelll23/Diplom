@@ -12,8 +12,7 @@
 
 ![Monosnap Allure Report - Google Chrome 2023-09-13 ](https://github.com/Pavelll23/Diplom/assets/116386264/42607d0e-ae85-442b-bc1a-b33b2fbfb752)
 =======
-![](C:/Users/Павел/Downloads/Monosnap Allure Report - Google Chrome 2023-09-13 .png)
->>>>>>> c4213d3 (add sumReport)
+
 
 ### Процент успешных и не успешных тест-кейсов
 - Успешные сценарии составили 58.82%
