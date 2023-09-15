@@ -110,7 +110,7 @@ public class ByForCredit {
         assertEquals("Неверный формат", payment.getInvalidText());
     }
     @Test
-    void shouldByEnterNameCyrillic(){        //Ввод имени на кирилице
+    void shouldByEnterNameCyrillic(){        //Ввод имени на кириллице
         val dashboardtPage = new DashboardPage();
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
@@ -128,7 +128,7 @@ public class ByForCredit {
         assertEquals("Неверный формат", payment.getInvalidText());
     }
     @Test
-    void shouldByEnterTsyfry(){        //Ввод в поле "Имя" цыфры
+    void shouldByEnterTsyfry(){        //Ввод в поле "Имя" цифры
         val dashboardtPage = new DashboardPage();
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
@@ -146,7 +146,7 @@ public class ByForCredit {
         assertEquals("Неверный формат", payment.getInvalidText());
     }
     @Test
-    void shouldByEnterCard15Tsyfry(){        //Ввод в поле "Номер карты" 15 цыфр
+    void shouldByEnterCard15Tsyfry(){        //Ввод в поле "Номер карты" 15 цифр
         val dashboardtPage = new DashboardPage();
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();
@@ -173,7 +173,7 @@ public class ByForCredit {
        // assertEquals("Неверный формат", payment.getInvalidText());
     }
     @Test
-    void shouldByEnterCvcOneTsyfry(){        //Ввод в поле "CVC" одну цыфру
+    void shouldByEnterCvcOneTsyfry(){        //Ввод в поле "CVC" одну цифру
         val dashboardtPage = new DashboardPage();
         dashboardtPage.openCreditPage();
         val payment = new PaymentPageForCredit();

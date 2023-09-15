@@ -167,7 +167,7 @@ public class ByForCard {
     }
 
     @Test
-    void shouldByEnterCard15Tsyfry() {        //Ввод в поле "Номер карты" 15 цыфр
+    void shouldByEnterCard15Tsyfry() {        //Ввод в поле "Номер карты" 15 цифр
         val dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
         val payment = new PaymentPage();
