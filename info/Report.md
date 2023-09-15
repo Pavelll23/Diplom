@@ -8,7 +8,7 @@
 #### *Общее количество тестовых сценариев 34*
 - тестовые сценарии со статусом passed 20
 - тестовые сценарии со статусом failed 14
-<<<<<<< HEAD
+
 
 ![Monosnap Allure Report - Google Chrome 2023-09-13 ](https://github.com/Pavelll23/Diplom/assets/116386264/42607d0e-ae85-442b-bc1a-b33b2fbfb752)
 =======
