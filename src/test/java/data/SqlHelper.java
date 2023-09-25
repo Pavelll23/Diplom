@@ -1,5 +1,6 @@
 package data;
 
+import lombok.SneakyThrows;
 import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
@@ -17,57 +18,41 @@ public class SqlHelper {
     private static String password = System.getProperty("db.password");
     private static Connection connection;
 
-
+    @SneakyThrows
     public static Connection getConnection() {
-
-        try {connection = DriverManager.getConnection(url, user, password);
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
+        connection = DriverManager.getConnection(url, user, password);
         return connection;
     }
 
+    @SneakyThrows
     public static void deleteDataBase() {
-        val runner = new QueryRunner();
-        val deletePayment = "DELETE FROM payment_entity";
-        val deleteOrder = "DELETE FROM order_entity";
-        val deleteCreditRequest = "DELETE FROM credit_request_entity";
+        var runner = new QueryRunner();
+        getConnection();
 
-        try (val connection = getConnection()) {
-            runner.update(connection, deletePayment);
-            runner.update(connection, deleteOrder);
-            runner.update(connection, deleteCreditRequest);
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
+        runner.update(connection, "DELETE FROM payment_entity");
+        runner.update(connection, "DELETE FROM order_entity");
+        runner.update(connection, "DELETE FROM credit_request_entity");
     }
 
-
-        public static String getPaymentStatus() {
-            String codeSql = "SELECT status FROM payment_entity";
-            val runner = new QueryRunner();
-            try (val connection = getConnection()) {
-                val cardStatus = runner.query(connection, codeSql, new ScalarHandler<String>());
-                return cardStatus;
-            } catch (SQLException sqlException) {
-                sqlException.printStackTrace();
-            }
-            return null;
-        }
-
-        public static String getCreditPaymentStatus() {
-            String codeSql = "SELECT status FROM credit_request_entity";
-            val runner = new QueryRunner();
-            try (val connection = getConnection()) {
-                val cardStatus = runner.query(connection, codeSql, new ScalarHandler<String>());
-                return cardStatus;
-            } catch (SQLException sqlException) {
-                sqlException.printStackTrace();
-            }
-            return null;
-
-        }
+    @SneakyThrows
+    public static String getPaymentStatus() {
+        String codeSql = "SELECT status FROM payment_entity";
+        var runner = new QueryRunner();
+        getConnection();
+        var cardStatus = runner.query(connection, codeSql, new ScalarHandler<String>());
+        return cardStatus;
     }
+
+    @SneakyThrows
+    public static String getCreditPaymentStatus() {
+        String codeSql = "SELECT status FROM credit_request_entity";
+        var runner = new QueryRunner();
+        getConnection();
+        var cardStatus = runner.query(connection, codeSql, new ScalarHandler<String>());
+        return cardStatus;
+
+    }
+}
 
 
 

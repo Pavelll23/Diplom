@@ -4,7 +4,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import data.DataHelper;
 import data.SqlHelper;
 import io.qameta.allure.selenide.AllureSelenide;
-import lombok.val;
 import org.junit.jupiter.api.*;
 import page.DashboardPage;
 import page.PaymentPage;
@@ -38,9 +37,9 @@ public class ByForCard {
 
     @Test
     void shouldSuccessfulPurchaseByCard() {         // Покупка тура картой со статусом "APPROVED"
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getApprovedCard());
         payment.expectationOperationApproved();
         assertEquals("APPROVED", SqlHelper.getPaymentStatus());
@@ -48,9 +47,9 @@ public class ByForCard {
 
     @Test
     void shouldPurchaseByCardDeclined() {            // Покупка тура картой со статусом "DECLINED"
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDeclinedCard());
         payment.expectationError();
         assertEquals("DECLINED", SqlHelper.getPaymentStatus());
@@ -58,9 +57,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentEmptyForm() {              // Пустая форма
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getEmptyForm());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -68,9 +67,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentLastMonth() {           // Прошедший месяц
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDateLastMonth());
         payment.expectationInvalidDataCard();
         assertEquals("Неверно указан срок действия карты", payment.getInvalidText());
@@ -78,9 +77,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentNonExistentMonth() {          // Не существующий месяц
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDateNonExistentMonth());
         payment.expectationInvalidDataCard();
         assertEquals("Неверно указан срок действия карты", payment.getInvalidText());
@@ -88,9 +87,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentOneSymbolInMonth() {          // Одна цифра в месяце
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDateOneSymbolIntMonth());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -98,9 +97,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentPastYear() {          // Прошлый год
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDatePastYear());
         payment.expectationCardExpired();
         assertEquals("Истёк срок действия карты", payment.getInvalidText());
@@ -108,9 +107,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentNextYear() {          // Год не входящий в диапазон валидных (+6)
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDateNextYear());
         payment.expectationInvalidDataCard();
         assertEquals("Неверно указан срок действия карты", payment.getInvalidText());
@@ -118,9 +117,9 @@ public class ByForCard {
 
     @Test
     void shouldByPaymentOneSymbolInYear() {          // Одна цифра при указании года
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getDateOneSymbolIntYear());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -128,9 +127,9 @@ public class ByForCard {
 
     @Test
     void shouldByEnterNameCyrillic() {        //Ввод имени на кириллице
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getNameCyrillic());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -138,9 +137,9 @@ public class ByForCard {
 
     @Test
     void shouldByEnterSpecialSymbol() {        //Ввод в поле "Имя" спец.символов
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getNameSpecialSymbol());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -148,9 +147,9 @@ public class ByForCard {
 
     @Test
     void shouldByEnterTsyfry() {        //Ввод в поле "Имя" цифры
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getNameTsyfry());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -158,9 +157,9 @@ public class ByForCard {
 
     @Test
     void shouldByEnterManySymbol() {        //Ввод в поле "Имя" >64 символов
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getNameManySymbol());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -168,9 +167,9 @@ public class ByForCard {
 
     @Test
     void shouldByEnterCard15Tsyfry() {        //Ввод в поле "Номер карты" 15 цифр
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getCard15Tsyfry());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());
@@ -178,27 +177,27 @@ public class ByForCard {
 
     @Test
     void shouldByEnterCardAllZero() {        //Ввод в поле "Номер карты" все 0
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getCardAllZero());
         payment.expectationError();
     }
 
     @Test
     void shouldByEnterCvcAllZero() {        //Ввод в поле "CVC" все 0
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getCvcAllZero());
         payment.expectationError();
     }
 
     @Test
     void shouldByEnterCvcOneTsyfry() {        //Ввод в поле "CVC" одну цыфру
-        val dashboardtPage = new DashboardPage();
+        var dashboardtPage = new DashboardPage();
         dashboardtPage.openBuyPage();
-        val payment = new PaymentPage();
+        var payment = new PaymentPage();
         payment.completedForm(DataHelper.getCvcOneTsyfry());
         payment.expectationInvalidFormat();
         assertEquals("Неверный формат", payment.getInvalidText());

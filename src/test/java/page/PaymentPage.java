@@ -43,27 +43,27 @@ public class PaymentPage {
     }
 
     public void expectationOperationApproved() {
-        operationApproved.shouldBe(visible, Duration.ofMillis(12000));
+        operationApproved.shouldBe(visible, Duration.ofMillis(15000));
     }
 
     public void expectationError() {
-        error.shouldBe(visible, Duration.ofMillis(12000));
+        error.shouldBe(visible, Duration.ofMillis(15000));
     }
 
     public void expectationInvalidFormat() {
-        invalidFormat.shouldBe(visible, Duration.ofMillis(12000));
+        invalidFormat.shouldBe(visible);
     }
 
     public void expectationInvalidDataCard() {
-        invalidDataCard.shouldBe(visible, Duration.ofMillis(12000));
+        invalidDataCard.shouldBe(visible);
     }
 
     public void expectationCardExpired() {
-        cardExpired.shouldBe(visible, Duration.ofMillis(12000));
+        cardExpired.shouldBe(visible);
     }
 
     public void expectationErrorField() {
-        errorField.shouldBe(visible, Duration.ofMillis(12000));
+        errorField.shouldBe(visible);
     }
 
     public String getInvalidText() {

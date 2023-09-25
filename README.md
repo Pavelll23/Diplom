@@ -25,9 +25,9 @@
 - В браузере в адресной строке набираем```http://localhost:8080/```
 
 ### *Запуск автотестов*
-- Для запуска автотемтов в зависимости с какой БД хотим работать ```.\gradlew clean test -```
-1. MySQL ```.\gradlew clean test -Ddb.url=jdbc:mysql://localhost:3306/app```
-2. PostgreSQL ```.\gradlew clean test -Ddb.url=jdbc:postgresql://localhost:5432/app```
+- Для запуска автотемтов в зависимости с какой БД хотим работать 
+1. MySQL ```.\gradlew clean test -Ddburl=jdbc:mysql://localhost:3306/app```
+2. PostgreSQL ```.\gradlew clean test -Ddburl=jdbc:postgresql://localhost:5432/app```
 
 ### *Отчет по результатам автотестов*
 - В терминале ввести ```.\gradlew allureReport``` или ```.\gradlew allureServe```
