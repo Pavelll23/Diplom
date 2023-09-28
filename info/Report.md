@@ -10,15 +10,15 @@
 - тестовые сценарии со статусом failed 12
 
 
-![Monosnap Allure Report - Google Chrome 2023-09-13 ](https://github.com/Pavelll23/Diplom/assets/116386264/42607d0e-ae85-442b-bc1a-b33b2fbfb752)
+![Monosnap Allure Report - Google Chrome 2023-09-28 ](https://github.com/Pavelll23/Diplom/assets/116386264/9a0b01b5-f268-42e6-899b-3a45a647eac8)
 =======
 
 
 ### Процент успешных и не успешных тест-кейсов
 - Успешные сценарии составили 64.7%
-![Monosnap Allure Report - Google Chrome 2023-09-13  png1](https://github.com/Pavelll23/Diplom/assets/116386264/2ee599be-0594-40c2-853a-257ff88e4ce8)
+![Monosnap Allure Report - Google Chrome 2023-09-28  png2](https://github.com/Pavelll23/Diplom/assets/116386264/5e59f6f2-6fd7-4b91-b4b8-1489b1a9299e)
 - Не успешные сценарии составили 35.3%
-![Monosnap Allure Report - Google Chrome 2023-09-13  png2](https://github.com/Pavelll23/Diplom/assets/116386264/5918153d-fb57-4a20-a6c3-9364eafd5dc0)
+![Monosnap Allure Report - Google Chrome 2023-09-28  png1](https://github.com/Pavelll23/Diplom/assets/116386264/eb557ae7-551d-4244-835a-8f59c2dbdb89)
 
 ### Общие рекомендации
 1. Для упрощения поиска нужных нам селекторов добавить data test-id для элементов страниц.
