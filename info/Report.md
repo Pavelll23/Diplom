@@ -6,8 +6,8 @@
 
 ### Количество тест-кейсов
 #### *Общее количество тестовых сценариев 34*
-- тестовые сценарии со статусом passed 20
-- тестовые сценарии со статусом failed 14
+- тестовые сценарии со статусом passed 22
+- тестовые сценарии со статусом failed 12
 
 
 ![Monosnap Allure Report - Google Chrome 2023-09-13 ](https://github.com/Pavelll23/Diplom/assets/116386264/42607d0e-ae85-442b-bc1a-b33b2fbfb752)
@@ -15,9 +15,9 @@
 
 
 ### Процент успешных и не успешных тест-кейсов
-- Успешные сценарии составили 58.82%
+- Успешные сценарии составили 64.7%
 ![Monosnap Allure Report - Google Chrome 2023-09-13  png1](https://github.com/Pavelll23/Diplom/assets/116386264/2ee599be-0594-40c2-853a-257ff88e4ce8)
-- Не успешные сценарии составили 41.18%
+- Не успешные сценарии составили 35.3%
 ![Monosnap Allure Report - Google Chrome 2023-09-13  png2](https://github.com/Pavelll23/Diplom/assets/116386264/5918153d-fb57-4a20-a6c3-9364eafd5dc0)
 
 ### Общие рекомендации
