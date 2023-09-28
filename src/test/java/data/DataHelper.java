@@ -1,7 +1,6 @@
 package data;
 
 import com.github.javafaker.Faker;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -18,30 +17,10 @@ public class DataHelper {
         return ("4444 4444 4444 4442");
     }
 
-//    public static String getMonth() {
-//        String month = LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
-//        return month;
-//    }
-
-//    public static String getPastMonth(int shift) {
-//        String month = LocalDate.now().minusMonths(shift).format(DateTimeFormatter.ofPattern("MM"));
-//        return month;
-//    }
-
     public static String getMonth(int shift) {
         String month = LocalDate.now().plusMonths(shift).format(DateTimeFormatter.ofPattern("MM"));
         return month;
     }
-
-//    public static String getYear() {
-//        String year = LocalDate.now().format(DateTimeFormatter.ofPattern("YY"));
-//        return year;
-//    }
-//
-//    public static String getPastYear(int shift) {
-//        String year = LocalDate.now().minusYears(shift).format(DateTimeFormatter.ofPattern("YY"));
-//        return year;
-//    }
 
     public static String getYear(int shift) {
         String year = LocalDate.now().plusYears(shift).format(DateTimeFormatter.ofPattern("YY"));

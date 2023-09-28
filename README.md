@@ -17,9 +17,9 @@
 - Для запуска приложения в зависимости с какой БД хотим работать:
   Открываем новую сессию в терминале и набираем
 
-1.```java -jar artifacts/aqa-shop.jar -Dspring.datasourse.url=jdbc:mysql://localhost:3306/app```
+1.```java "-Dspring.datasourse.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar```
 
-2.```java -jar artifacts/aqa-shop.jar -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app```
+2.```java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar```
 
 ### *Проверка работы приложения*
 - В браузере в адресной строке набираем```http://localhost:8080/```

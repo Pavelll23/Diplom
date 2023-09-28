@@ -1,13 +1,11 @@
 package data;
 
 import lombok.SneakyThrows;
-import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+
 
 
 public class SqlHelper {
@@ -36,7 +34,7 @@ public class SqlHelper {
 
     @SneakyThrows
     public static String getPaymentStatus() {
-        String codeSql = "SELECT status FROM payment_entity";
+        String codeSql = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
         var runner = new QueryRunner();
         getConnection();
         var cardStatus = runner.query(connection, codeSql, new ScalarHandler<String>());
@@ -45,7 +43,7 @@ public class SqlHelper {
 
     @SneakyThrows
     public static String getCreditPaymentStatus() {
-        String codeSql = "SELECT status FROM credit_request_entity";
+        String codeSql = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
         var runner = new QueryRunner();
         getConnection();
         var cardStatus = runner.query(connection, codeSql, new ScalarHandler<String>());

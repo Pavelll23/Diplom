@@ -3,9 +3,7 @@ package page;
 
 import com.codeborne.selenide.SelenideElement;
 import data.CardInfo;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -26,7 +24,6 @@ public class PaymentPage {
     private SelenideElement invalidFormat = $(byText("Неверный формат"));
     private SelenideElement invalidDataCard = $(byText("Неверно указан срок действия карты"));
     private SelenideElement cardExpired = $(byText("Истёк срок действия карты"));
-    private SelenideElement errorField = $(byText("Поле обязательно для заполнения"));
     private SelenideElement invalidMassege = $(".input__sub");
 
     public PaymentPage() {
@@ -60,10 +57,6 @@ public class PaymentPage {
 
     public void expectationCardExpired() {
         cardExpired.shouldBe(visible);
-    }
-
-    public void expectationErrorField() {
-        errorField.shouldBe(visible);
     }
 
     public String getInvalidText() {
